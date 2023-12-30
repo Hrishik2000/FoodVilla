@@ -3,7 +3,7 @@
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: turquoise;
+    background-color: #0A0C0B;
   }
   
 .title img {
@@ -21,6 +21,7 @@
 .nav-items>ul>li{
     padding: 5px;
     margin: 0;
+    color: bisque;
 }
 
 .card{
@@ -30,7 +31,13 @@
     width: 240px;
     margin: 10px;
     padding: 10px;
+    color: bisque;
+    background-color: #0A0C0B;
 
+}
+
+.card:hover{
+    cursor: pointer;
 }
 .card>img{
     
@@ -50,8 +57,8 @@
 .Restorant-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 10px;
+    gap: 20px;
+   
 }
 .Search-fn{
     display: flex;
@@ -67,12 +74,27 @@
 }
 .Search-fn>button{
     width: 60px;
-    height: 30px;
+    
     border-radius: 20px;
     padding: 5px;
-    margin-top: 5px;
+   
     margin-left: 5px;
+    
+}
+.Search-fn>button:hover{
+    background-color: #0A0C0B;
+    color: rgb(246, 241, 242);
 }
 
+.LoginLogout{
+    border: bisque;
+    border-radius: 20px;
+    color: bisque;
+    background-color: #0A0C0B;
+}
+.LoginLogout:hover{
+    cursor: pointer;
+    color: rgb(236, 137, 8);
+}
 
   
