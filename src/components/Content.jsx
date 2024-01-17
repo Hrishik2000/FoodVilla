@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "./Card.jsx"
 //import {RestorantsList} from "../constants.jsx"
 import ShimmerText from "./ShimmerText.jsx";
+import { Link } from "react-router-dom";
 
 
 //!Note
@@ -99,7 +100,10 @@ function Content() {
     {  
    (FilteredRestorents.length==0) ? <h1>Meal Not Found</h1> : FilteredRestorents.map((item)=>{
       
-       return <Card {...item.info} key ={item.info.id}/>
+    //giving dynamic ID to link  to route to specific route 
+       return <Link to={'/restorantMenue/'+ item.info.id} key = {item.info.id}>
+        <Card {...item.info} />
+        </Link>
     })
     }
     </div>

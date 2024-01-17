@@ -8,8 +8,12 @@ export default function ShimmerText(){
 
     return (
         <>
-        <h1>Shimmer UI....</h1>
-        <h1>Loading.....</h1>
+        <div className="Restorant-list">
+        {Array(10).fill("").map((element,index)=>{
+                 return <div className="Shimmer-Card" key = {index}></div>
+        })}
+        </div>
+        
         </>
         
     )

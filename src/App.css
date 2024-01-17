@@ -97,4 +97,35 @@
     color: rgb(236, 137, 8);
 }
 
+
+.Shimmer-Card{
+    height: 300px;
+    width: 240px;
+    background-color:  bisque;
+    margin: 10px;
+    border-radius: 30px;
+    
+}
+a{
+    color: bisque ;
+    text-decoration: none;
+}
+.Menue{
+    display: flex;
+    height: 200px;
+    width: 200px;
+}
+
+.Rest-page{
+   
+}
+
+.FunctionComponent{
+    background-color: aquamarine;
+}
+.classComponent{
+    background-color: cyan;
+}
+ 
+
   
