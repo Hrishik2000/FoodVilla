@@ -3,31 +3,12 @@ import Card from "./Card.jsx"
 //import {RestorantsList} from "../constants.jsx"
 import ShimmerText from "./ShimmerText.jsx";
 import { Link } from "react-router-dom";
+// filtering logic in Helper component
+import { filterData } from "../utils/helper.jsx";
+import useIsOnline from "../utils/useIsOnline.jsx";
+import Offline from "./Offline.jsx";
 
 
-//!Note
-
-  //!way 1 explicite return from arrow function
-  function filterData(SearchData,AllRestorants){
-    const filteredData = AllRestorants.filter((Restorant)=>{
-      return Restorant?.info?.name.toLowerCase().includes(SearchData.toLowerCase())
-  });
-
-    return filteredData;
-}
-    
-    //!way 2 implicit return from arrow function (remove the curly braces)
-    // function filterData(SearchData,Restorants){
-    //   const filteredData = Restorants.filter((Restorant)=>
-    //     Restorant?.info?.name.toLowerCase().includes(SearchData.toLowerCase())
-    // );
-  
-    //   return filteredData;
-    //}
-  
-    
-  
-  
   
 function Content() {
   
@@ -59,13 +40,19 @@ function Content() {
     catch(error){
       console.error("Error Fetchning Data", error.message);
     }
-    
-    
 
-   
   }
+
+  //custom hook to check online status
+  const isOnline = useIsOnline();
+  //checking internet functionality
+  if(isOnline==false) return <Offline/>;
+
   //restrict the rendering of AllRestorents is not there
   if(!AllRestorants) return null;
+
+ 
+
 
   
   //conditional rendering
@@ -109,6 +96,7 @@ function Content() {
     </div>
     </>
   )
+  
 }
 
 export default Content;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { ErrorPage } from './components/ErrorPage';
@@ -9,6 +9,17 @@ import Contact from './components/contact';
 import Content from './components/Content.jsx';
 import RestorantMenue from './components/RestorantMenue.jsx';
 import Profile from './components/Profile_class.jsx';
+//import InstaMart from './components/InstaMart.jsx';
+
+//chunking -> splitting of code into smaller pieces which will load dynamically when user clicks on it
+//code splitting
+//lazy loading
+//dynamic bundeling
+//on demand loading
+//dynamic import (all are same thing)
+//                lazy()given by react --> import() returns a promise--> inside promise give path
+const InstaMart = lazy(()=> { return import("../src/components/InstaMart.jsx")})
+//! NEVER LAZY LOAD THE COMPONENT INTO  ANOTHER COMPONENT.
 
 
 //!types of routing
@@ -41,6 +52,15 @@ const AppRouter = createBrowserRouter([
         { path: "/restorantMenue/:id", element: <RestorantMenue/> },
         //if we not handel error then only error code will generate hence commenting this
         // { path: "*", element: <ErrorPage/> }
+        {
+          path: "/instamart" ,
+          element : (<Suspense >
+                <InstaMart/>
+              </Suspense>)
+          //element: <InstaMart/>
+         
+          
+        }
      ]
     }
   ])
