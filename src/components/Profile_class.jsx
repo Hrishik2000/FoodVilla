@@ -53,13 +53,13 @@ class Profile_class extends React.Component {
         console.log("child_1_render_called "+ this.props.name);
 
         return(
-            <div className="classComponent"> 
+            <div className="classComponent item-center" > 
                             <h1>Profile_Class_component</h1>
                             {/* use this.props to get any props in class component */}
                             <h2>{this.props.name}</h2>
                             <h2>login ID: {this.state.APIdata?.login}</h2>
                             <h3>Name: {this.state.APIdata?.name}</h3>
-                            <img src={this.state.APIdata?.avatar_url} alt="" />
+                            <img className="h-72 w-72 rounded-md mx-auto block" src={this.state.APIdata?.avatar_url} alt="" />
 
                             <h2>counter value: {this.state.count}</h2>
                             <h2>counter2 incrimental: {this.state.count2}</h2>
@@ -79,7 +79,7 @@ class Profile_class extends React.Component {
                                         count2: this.state.count2 + 1
                                     });
                                 }
-                                }>click</button>
+                                } className="bg-[#0A0C0B] text-[#E4AE74] p-2 rounded-md">click</button>
             </div>
 
         )

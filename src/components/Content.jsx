@@ -60,15 +60,15 @@ function Content() {
 
     <>
     
-    <div className="Search-fn">
-    <input type="text" placeholder="search"
+    <div className="Search-fn text-center m-3  ">
+    <input className=" focus:bg-slate-300 border-2 rounded-md p-2 m-1" type="text" placeholder="search"
     value={SearchData} onChange={(e)=>
       {
         setSearchData(e.target.value);
         
       }}/>
 
-    <button onClick={()=>{
+    <button  className= "bg-[#0A0C0B] text-[#E4AE74] rounded-md m-1 p-2" onClick={()=>{
          const data = filterData(SearchData,AllRestorants);
         //  console.log(RestorantsList)
         //  console.log(data)
@@ -83,7 +83,7 @@ function Content() {
     {console.log(FilteredRestorents)} */}
     
     {/* render cards */}
-    <div className="Restorant-list">
+    <div className="Restorant-list flex flex-wrap ">
     {  
    (FilteredRestorents.length==0) ? <h1>Meal Not Found</h1> : FilteredRestorents.map((item)=>{
       

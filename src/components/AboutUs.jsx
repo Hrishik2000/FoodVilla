@@ -21,14 +21,14 @@ class AboutUs extends React.Component {
 
     console.log("parent-render called");
     return(
-      <>
-      <h1>About US Page</h1>
+      <div className="text-center">
+      <h1 className="">About US Page</h1>
     {/* <Outlet/> */}
     <Profile_class name={"child 1"}/>
     {/* <Profile_class_2 name={"child 2"}/> */}
 
     {/* <Profile_function name={"hrishik-function"}/> */}
-    </>
+    </div>
     )
   }
 };

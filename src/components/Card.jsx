@@ -11,12 +11,12 @@ export default function Card(
 
     return (
       <>
-      <div className="card">
-        <img src={GET_IMAGE_URL+cloudinaryImageId} alt="" />
-        <h2>{name}</h2>
-        <h3>{avgRating} stars</h3>
+      <div className="card w-56 h-[400px]  bg-[#0A0C0B] text-[#E4AE74] rounded-xl p-4 m-3">
+        <img className="rounded-xl" src={GET_IMAGE_URL+cloudinaryImageId} alt="" />
+        <h2 className="font-bold">{name}</h2>
+        <h3>Rating: {avgRating} stars</h3>
         <h3>{itemsToShow.join(", ")}</h3>
-        <h4>{locality}, {areaName}</h4>
+        <h4 className=" font-medium ">Locality : {locality}, {areaName}</h4>
       </div>
       </>
     )

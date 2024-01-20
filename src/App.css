@@ -1,4 +1,43 @@
-.title {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TAILWIND ADVANTAGE 
+
+1. Reduce efforts of writing css
+2. resuable css
+3. gives customisable css
+4.  rapid devlopment
+
+Rapid Development: Tailwind CSS provides a set of utility classes that allow you to rapidly prototype and build user interfaces. This can significantly speed up the development process compared to writing custom CSS.
+
+Flexibility: Tailwind is highly customizable. You can configure it to include only the styles you need, which helps in keeping your stylesheet lightweight.
+
+Consistent Design: The utility-first approach of Tailwind promotes consistency in your design. With predefined classes for margins, paddings, colors, etc., you're more likely to have a consistent look and feel across your application.
+
+Responsive Design: Tailwind provides built-in classes for handling responsive design, making it easier to create layouts that adapt to different screen sizes without writing custom media queries.
+
+Low Learning Curve: Tailwind doesn't require extensive knowledge of CSS to get started. Developers who are familiar with the class-based approach can quickly pick up and use Tailwind.
+
+No Naming Conventions: Tailwind avoids the need for naming conventions, which can be subjective and vary across projects. Instead, it provides a clear and descriptive class naming system.
+
+Community and Ecosystem: Tailwind has a large and active community, which means you can find a wealth of resources, plugins, and extensions created by other developers. This makes it easier to integrate Tailwind with various frameworks and libraries.
+
+Theming Support: Tailwind supports theming, allowing you to define and use your color palette, fonts, and other design tokens across your project.
+
+Built-in PurgeCSS: Tailwind includes a tool called PurgeCSS, which helps in removing unused styles when building for production. This results in smaller CSS file sizes, improving page load times.
+
+Styling in HTML: With Tailwind, you can style your HTML directly using classes, eliminating the need to switch between HTML and CSS files constantly.
+
+DISADVANTAGE OF TAILWIND
+
+1. Steap learing curve
+2. reduces readablity of JSX
+3. File Size: */
+
+
+
+/* .title {
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -128,4 +167,4 @@ a{
 }
  
 
-  
+   */
