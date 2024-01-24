@@ -1,12 +1,16 @@
-import { useState } from "react";
+// useContext hook is required to use the created context (in our case userConext)
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useIsOnline from "../utils/useIsOnline";
+import userContext from "../utils/userContext";
 
 function Header() {
 
   const [isLoggedIn,setIsLoggedIn] = useState(true);
   //Custom Hook
   const isOnline =useIsOnline();
+  // take out user using use context hook and passing it userContext
+  const {user} = useContext(userContext);
 
   const statusColor = {
     color: isOnline ? 'green' : 'red',
@@ -30,8 +34,14 @@ function Header() {
         <li className="px-2 "><Link to={'/instamart'}>InstaMart</Link></li>
 
         <li className="px-4 " style={statusColor}>{isOnline ? "ONLINE" : "OFFLINE"}</li>
-        {(isLoggedIn == true) ? <button className="LoginLogout hover:text-red-500" onClick={()=>{setIsLoggedIn(false)}}>Login</button>
-      : <button className="LoginLogout" onClick={()=>{setIsLoggedIn(true)}}>Logout</button>}
+        {/* {console.log(user)} */}
+        {/* place to display data (user.name) */}
+        <li className="text-red-300">{user.name}:{user.email} </li>
+        {(isLoggedIn == true) ? 
+          <button className="LoginLogout hover:text-red-500" onClick={()=>{setIsLoggedIn(false)}}> Login </button>
+          : <button className="LoginLogout" onClick={()=>{setIsLoggedIn(true)}}> Logout </button>}
+        
+        
       </ul>
 
       

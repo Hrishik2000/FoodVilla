@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 import Profile_function from "./Profile_function";
 import Profile_class from "./Profile_class";
 import Profile_class_2 from "./Profile_class_2";
+import userContext from "../utils/userContext"
 
 class AboutUs extends React.Component {
   constructor(props){
@@ -28,6 +29,12 @@ class AboutUs extends React.Component {
     {/* <Profile_class_2 name={"child 2"}/> */}
 
     {/* <Profile_function name={"hrishik-function"}/> */}
+
+  {/* using context inside class based component */}
+    <userContext.Consumer>
+      {/* this value has all data what we recieve */}
+      {(value)=>{ console.log(value)}}
+    </userContext.Consumer>
     </div>
     )
   }
