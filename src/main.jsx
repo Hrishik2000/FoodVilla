@@ -9,6 +9,7 @@ import Contact from './components/contact';
 import Content from './components/Content.jsx';
 import RestorantMenue from './components/RestorantMenue.jsx';
 import Profile from './components/Profile_class.jsx';
+import Cart from './components/Cart.jsx';
 //import InstaMart from './components/InstaMart.jsx';
 
 //chunking -> splitting of code into smaller pieces which will load dynamically when user clicks on it
@@ -61,6 +62,7 @@ const AppRouter = createBrowserRouter([
          
           
         }
+        ,{ path: "/cart", element: <Cart/> },
      ]
     }
   ])

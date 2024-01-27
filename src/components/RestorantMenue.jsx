@@ -3,13 +3,22 @@ import { useParams } from "react-router-dom"
 import {GET_IMAGE_URL} from "../constants"
 import ShimmerText from "./ShimmerText"
 import useFetchMenue from "../utils/useFetchMenue";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+import MenueCard from "./MenueCard";
 
 const RestorantMenue = () => {
 
     const {id} = useParams();
 
     const SpecificResorantMenue = useFetchMenue(id);
-    console.log(SpecificResorantMenue);
+    //console.log(SpecificResorantMenue);
+
+    //! when the button is clicked it dispatches an action which calls reducer a function which update the slice of the store
+    const dispatch = useDispatch(); //first call  useDispatch hook
+    const updateCart = ()=>{
+       dispatch(addItem("grapes"));
+    }
 
   return (!SpecificResorantMenue) ? <ShimmerText/> :(
     <div className="items-center ">
@@ -26,29 +35,19 @@ const RestorantMenue = () => {
  
         <h3>Star Ratings:{SpecificResorantMenue?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.rating}</h3>
         <h1 className="font-bold">Menue</h1>
-        <ul>
+        <button className="bg-[#E4AE74] p-1 border border-black rounded-md " onClick={
+          ()=>{
+            updateCart();
+          }
+        }>click Me</button>
+        <div className="flex flex-wrap">
             {SpecificResorantMenue?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map((item)=>{
-              console.log(item);
-              return (
-                <div className="">
-                  <div className="Menue h-[250px] w-48 bg-[#E4AE74] m-2 ">
-                    <img className="h-44 w-44 rounded-xl p-2 mx-auto block " src={GET_IMAGE_URL+item?.card?.info?.imageId} alt="" />
-
-                    <div className="Price text-center">
-                    <li>{item?.card?.info?.name}</li>
-                    {/* {console.log(item?.card?.info?.price)} */}
-                    {/* <h3>{Math.floor(item?.card?.info?.defaultPrice/ 100)}</h3> */}
-                    <h3>
-                        {item?.card?.info?.defaultPrice
-                        ? Math.floor(item.card.info.defaultPrice / 100)
-                          : Math.floor(item.card.info.price / 100)}
-                        </h3>
-                    </div>
-                  </div>
-                </div>
-                    )
+               console.log(item.card.info);
+              return(
+                <MenueCard  info = {item.card.info}/>
+              )
                 })}
-        </ul>
+        </div>
       </div>
     </div>
    

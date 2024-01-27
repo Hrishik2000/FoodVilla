@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import userContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 function App() {
   // Defined state for conetext data update
@@ -13,7 +15,8 @@ function App() {
   });
 
   return (
-    <>
+    // provide store to app using Provider like this
+    <Provider store = {store}>
       {/* wrap the component inside .Provider to update conext  from inside components */}
       <userContext.Provider
       // pass data as props
@@ -28,7 +31,7 @@ function App() {
         <Outlet />
         <Footer />
       </userContext.Provider>
-    </>
+    </Provider>
   );
 }
 

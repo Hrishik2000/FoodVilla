@@ -61,7 +61,7 @@ function Content() {
     <>
     
     <div className="Search-fn text-center m-3  ">
-    <input className=" focus:bg-slate-300 border-2 rounded-md p-2 m-1" type="text" placeholder="search"
+    <input className=" focus:bg-slate-300 border-2 rounded-md p-2 m-1 border-[#E4AE74]" type="text" placeholder="search"
     value={SearchData} onChange={(e)=>
       {
         setSearchData(e.target.value);

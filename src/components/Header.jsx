@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useIsOnline from "../utils/useIsOnline";
 import userContext from "../utils/userContext";
+import {  useSelector } from "react-redux";
 
 function Header() {
 
@@ -15,6 +16,9 @@ function Header() {
   const statusColor = {
     color: isOnline ? 'green' : 'red',
   };
+
+  // useSelector hook is required to subscribe the cart
+  const itemsList = useSelector((store)=>{ return store.cart.items})
 
   return (
     <>
@@ -32,6 +36,7 @@ function Header() {
         <li className="px-2 "><Link to={'/Meals'}>Meals</Link></li>
         <li className="px-2 "><Link to={'/AboutUs'}>About Us</Link></li>
         <li className="px-2 "><Link to={'/instamart'}>InstaMart</Link></li>
+        <li className="px-2 "><Link to={'/cart'}>Cart <span className=" font-bold text-white">{itemsList.length}</span> </Link></li>
 
         <li className="px-4 " style={statusColor}>{isOnline ? "ONLINE" : "OFFLINE"}</li>
         {/* {console.log(user)} */}
