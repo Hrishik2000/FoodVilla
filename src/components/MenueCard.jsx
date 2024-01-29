@@ -14,8 +14,11 @@ export default function MenueCard(info) {
 
   return (
     <>
-      <div className="card w-56 h-[350px]  bg-[#0A0C0B] text-[#E4AE74] rounded-xl p-4 m-3 ">
-        <img className="rounded-xl" src={GET_IMAGE_URL + imageId} alt="img" />
+      <div className="card w-56 h-[280px]  bg-[#0A0C0B] text-[#E4AE74] rounded-xl p-4 m-3 relative ">
+        <div className=" overflow-hidden rounded-xl">
+        <img className="rounded-xl transition-transform transform hover:scale-110" src={GET_IMAGE_URL + imageId} alt="img" />
+        </div>
+        
         <h2 className="font-bold">{name}</h2>
         <div className="flex justify-between">
           <h3>
@@ -26,10 +29,11 @@ export default function MenueCard(info) {
               : Math.floor(price / 100)}
           </h3>
 
-          <button className="bg-green-600 text-white font-bold p-1 rounded-md " onClick={()=>AddItemToCart()}>
+          
+        </div>
+        <button className="bg-green-600 text-white font-bold p-1 rounded-md absolute bottom-2 right-2 " onClick={()=>AddItemToCart()}>
             add Item
           </button>
-        </div>
       </div>
     </>
   );

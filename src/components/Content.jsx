@@ -68,7 +68,7 @@ function Content() {
         
       }}/>
 
-    <button  className= "bg-[#0A0C0B] text-[#E4AE74] rounded-md m-1 p-2" onClick={()=>{
+    <button  className= "bg-[#0A0C0B] text-[#E4AE74] rounded-md m-1 p-2 hover:bg-[#E4AE74] hover:text-[#0A0C0B]  " onClick={()=>{
          const data = filterData(SearchData,AllRestorants);
         //  console.log(RestorantsList)
         //  console.log(data)
