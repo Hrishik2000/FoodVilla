@@ -5,7 +5,7 @@ import { ErrorPage } from './components/ErrorPage';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import Meals from './components/Meals';
-import Contact from './components/contact';
+import Contact from './components/Contact.jsx';
 import Content from './components/Content.jsx';
 import RestorantMenue from './components/RestorantMenue.jsx';
 import Profile from './components/Profile_class.jsx';
